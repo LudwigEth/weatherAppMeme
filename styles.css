@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 216, 222);
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
+.weather-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-data-container {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-info-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1337);
+    width: min(100%, 25rem);
+    border-radius: 0.5rem;
+}
+
+.weather-data-container > div {
+    align-self: center;
+}
+
+.location-container {
+    display: flex;
+    justify-content: center;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 0.25rem 1rem;
+}
+
+.date-container {
+    font-size: 0.925rem;
+    padding-bottom: 3rem;
+}
+
+.temperature {
+    position: relative;
+    margin-bottom: -0.5rem;
+    height: fit-content;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.temperature > span {
+    font-size: 5rem;
+}
+
+.temperature.fahrenheit .temp-c,
+.feelslike.fahrenheit .feelslike-c {
+    display: none;
+}
+
+.temperature.celsius .temp-f,
+.feelslike.celsius .feelslike-f {
+    display: none;
+}
+
+.temperature::after {
+    position: relative;
+    bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+.feelslike-c,
+.feelslike-f {
+    color: rgba(0, 0, 0, 0.42);
+}
+
+.feelslike-c::after,
+.feelslike-f::after {
+    position: relative;
+}
+
+.temperature.celsius::after,
+.feelslike-c::after {
+    content: '°C';
+}
+
+.temperature.fahrenheit::after,
+.feelslike-f::after {
+    content: '°F';
+}
+
+.weather-condition-img-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.weather-condition-icon {
+    height: 2rem;
+    width: auto;
+}
+
+.weatherCondition {
+    color: rgba(0, 0, 0, 0.42);
+}
+
+.weather-form {
+    position: relative;
+    display: flex;
+    padding: 1.5rem 0;
+}
+
+.weather-form > input {
+    background-color: rgba(255, 255, 255, 0.1337);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+    border: none;
+    color: rgba(0, 0, 0, 0.25);
+    caret-color: rgba(0, 0, 0, 0.42);
+}
+
+input:focus {
+    outline: none;
+    color: black;
+}
+
+.weather-form > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    align-self: center;
+    right: 0;
+    width: fit-content;
+    height: 2.5rem;
+    padding: 0.25rem;
+    width: 2rem;
+    border: none;
+    background-color: inherit;
+}
+
+.svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg-enter {
+    height: 1.0625rem;
+}
+
+.svg-enter-g {
+    fill: rgba(0, 0, 0, 0.25);
+}
+
+.fadeInSlideDown {
+    animation: fadeInSlideDown 0.5s forwards;
+}
+
+@keyframes fadeInSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
